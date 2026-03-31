@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-brand-black bg-white antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-orange text-white px-8 py-3 text-sm font-semibold tracking-wide hover:bg-orange-600 transition-colors duration-200 inline-block;
+  }
+  .btn-outline {
+    @apply border border-gray-300 text-brand-black px-8 py-3 text-sm font-medium tracking-wide hover:border-brand-black transition-colors duration-200 inline-block;
+  }
+  .btn-dark {
+    @apply bg-brand-black text-white px-8 py-3 text-sm font-semibold tracking-wide hover:bg-gray-800 transition-colors duration-200 inline-block;
+  }
+  .section-tag {
+    @apply text-brand-orange text-xs font-semibold tracking-widest uppercase mb-3 block;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-bold text-brand-black;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 px-4 py-3 text-sm text-brand-black placeholder-gray-400 focus:outline-none focus:border-brand-orange transition-colors duration-200 bg-white;
+  }
+  .select-field {
+    @apply w-full border border-gray-200 px-4 py-3 text-sm text-brand-black focus:outline-none focus:border-brand-orange transition-colors duration-200 bg-white appearance-none;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-600 mb-1.5 tracking-wide uppercase;
+  }
+  .form-card {
+    @apply bg-white border border-gray-100 p-8 md:p-10;
+  }
+  .form-section-title {
+    @apply text-xs font-semibold tracking-widest uppercase text-brand-orange mb-6 pt-2 border-t border-gray-100;
+  }
+}
+
+/* Ticker animation */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-animate {
+  animation: ticker-scroll 35s linear infinite;
+}
+
+/* Sponsor infinite scroll */
+@keyframes sponsor-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.sponsor-animate {
+  animation: sponsor-scroll 25s linear infinite;
+}
+.sponsor-animate:hover {
+  animation-play-state: paused;
+}
+
+/* Countdown flip feel */
+.count-block {
+  transition: transform 0.1s ease;
+}
