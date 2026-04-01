@@ -108,20 +108,45 @@ export function SpeakerSection() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 2,
+    },
+  },
+  {
+    breakpoint: 768,  // changed from 640
+    settings: {
+      slidesToShow: 1,
+      arrows: false,  // hide arrows on mobile to avoid overflow
+    },
+  },
+],
   };
+
+  function NextArrow(props) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="hidden md:flex absolute -right-4 lg:-right-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF4E00] to-[#E31B23] items-center justify-center shadow-[0_0_20px_rgba(255,78,0,0.5)] hover:shadow-[0_0_30px_rgba(255,78,0,0.8)] transition-all"
+    >
+      <FaChevronRight className="w-6 h-6 text-white" />
+    </button>
+  );
+}
+
+function PrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="hidden md:flex absolute -left-4 lg:-left-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gradient-to-r from-[#FF4E00] to-[#E31B23] items-center justify-center shadow-[0_0_20px_rgba(255,78,0,0.5)] hover:shadow-[0_0_30px_rgba(255,78,0,0.8)] transition-all"
+    >
+      <FaChevronLeft className="w-6 h-6 text-white" />
+    </button>
+  );
+}
 
   return (
     <section id="speaker" className="relative bg-brand-black py-24 overflow-hidden">
@@ -135,7 +160,7 @@ export function SpeakerSection() {
             </div>
         </div>
 
-        <div className="relative px-8 lg:px-16">
+        <div className="relative px-4 lg:px-16">
           <Slider {...settings}>
             {speakersData.map((speaker, index) => (
               <div key={index} className="px-4">
@@ -224,18 +249,23 @@ export function SpeakerSection() {
         </div>
       </div>
 
-      <style>{`
-        .slick-dots {
-          bottom: -50px;
-        }
-        .slick-dots li button:before {
-          color: rgba(255, 255, 255, 0.3);
-          font-size: 10px;
-        }
-        .slick-dots li.slick-active button:before {
-          color: #FF4E00;
-        }
-      `}</style>
+     <style>{`
+  .slick-dots {
+    bottom: -50px;
+  }
+  .slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: #FF4E00;
+  }
+  @media (max-width: 768px) {
+    .slick-slide {
+      padding: 0 4px;
+    }
+  }
+`}</style>
     </section>
   );
 }

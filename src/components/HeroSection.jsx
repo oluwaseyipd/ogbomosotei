@@ -36,7 +36,7 @@ function CountdownBlock({ value, label }) {
                  Building a Structured, Bankable and Scalable Enterprise
                </h1>
      
-               <div className="flex gap-8 mb-10 bg-black/30 w-max px-6 py-4">
+               <div className="flex gap-8 mb-4 md:mb-10 bg-black/30 w-full md:w-max px-6 py-4">
                  {[
                    { label: 'Date', value: 'May 2, 2026' },
                    { label: 'Time', value: '10:00 AM' },
