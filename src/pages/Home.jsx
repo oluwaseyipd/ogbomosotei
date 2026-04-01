@@ -3,6 +3,7 @@ import { useCountdown } from '../hooks/useCountdown'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { HiArrowRight } from 'react-icons/hi'
 import { SpeakerSection } from '../components/Speakers'
+import HeroSection from '../components/HeroSection'
 
 // ─── Countdown Block ───────────────────────────────────────────────
 function CountdownBlock({ value, label }) {
@@ -220,9 +221,9 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-[90vh] border-b border-gray-100">
+      {/* <section className="grid grid-cols-1 md:grid-cols-2 min-h-[90vh] border-b border-gray-100"> */}
         {/* Left */}
-        <div className="flex flex-col justify-center px-8 md:px-14 py-16 md:py-24 border-b md:border-b-0 md:border-r border-gray-100">
+        {/* <div className="flex flex-col justify-center px-8 md:px-14 py-16 md:py-24 border-b md:border-b-0 md:border-r border-gray-100">
           <div className="flex items-center gap-2 mb-7">
             <div className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
             <span className="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Inaugural Edition — Ogbomoso, Nigeria</span>
@@ -255,10 +256,10 @@ export default function Home() {
             <Link to="/register" className="btn-primary">Register for Free</Link>
             <Link to="/sponsor" className="btn-outline">Become a Sponsor</Link>
           </div>
-        </div>
+        </div> */}
 
         {/* Right — Countdown */}
-        <div className="bg-brand-black flex flex-col items-center justify-center px-8 py-16 md:py-24">
+        {/* <div className="bg-brand-black flex flex-col items-center justify-center px-8 py-16 md:py-24">
           <div className="text-[10px] tracking-widest uppercase text-brand-orange font-medium mb-10">Event Countdown</div>
 
           <div className="flex gap-0.5 w-full max-w-sm">
@@ -278,10 +279,11 @@ export default function Home() {
             <FaWhatsapp size={14} className="text-green-500" />
             Join our WhatsApp Community
           </a>
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
 
       {/* TICKER */}
+      <HeroSection />
       <Ticker />
 
       {/* ABOUT */}
