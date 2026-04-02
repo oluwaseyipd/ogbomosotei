@@ -7,6 +7,7 @@ import Speaker3 from '../assets/speakers/faith.jpeg'
 import Speaker4 from '../assets/speakers/temitayo.jpeg'
 import Speaker5 from '../assets/speakers/akintayo.jpeg'
 import Speaker6 from '../assets/speakers/Oreoluwa.jpeg'
+import Speaker7 from '../assets/speakers/oyeinloye.jpeg'
 
 const speakersData = [
   {   
@@ -61,6 +62,17 @@ const speakersData = [
     image: Speaker6,
     social:{
       facebook: "https://web.facebook.com/Oluwashola.Oreolwa/",
+    }
+  },
+   {   
+    name: "Adedotun Oyinloye",
+    title: "Co-founder",
+    company:" Cartway",
+    image: Speaker7,
+    social:{
+      linkedin: "https://www.linkedin.com/in/adedotunoyinloye/",
+      facebook: "https://web.facebook.com/adedotun.oyinloye.9/",
+      instagram: "https://www.instagram.com/adedotunglobal/",
     }
   },
 ];
@@ -120,14 +132,15 @@ export function SpeakerSection({ identity }) {
                 <div className="relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300">
 
                   {/* Image */}
-                  <div className="relative h-80 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B2B] via-transparent to-transparent z-10"></div>
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
+<div className="relative h-80 overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B2B] via-transparent to-transparent z-10"></div>
+  <img
+    src={speaker.image}
+    alt={speaker.name}
+    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+  />
+</div>
+
 
                   {/* Content */}
                   <div className="p-6 relative z-10">
