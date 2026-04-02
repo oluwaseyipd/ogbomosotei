@@ -1,25 +1,44 @@
-import { useState } from 'react'
-
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'otei-admin-2026'
-const SESSION_KEY = 'otei_admin_auth'
+import { useState, useEffect } from 'react'
+import { supabase } from '../lib/supabase'
 
 export default function AdminGuard({ children }) {
-  const [authed, setAuthed] = useState(() => sessionStorage.getItem(SESSION_KEY) === 'true')
+  const [session, setSession] = useState(undefined)
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleLogin = (e) => {
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session)
+    })
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+
+    return () => listener.subscription.unsubscribe()
+  }, [])
+
+  const handleLogin = async (e) => {
     e.preventDefault()
-    if (password === ADMIN_PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, 'true')
-      setAuthed(true)
-    } else {
-      setError('Incorrect password. Please try again.')
+    setError('')
+    setLoading(true)
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    setLoading(false)
+    if (error) {
+      setError('Incorrect email or password. Please try again.')
       setPassword('')
     }
   }
 
-  if (authed) return children
+  if (session === undefined) return (
+    <div className="min-h-screen bg-brand-black flex items-center justify-center">
+      <div className="text-gray-600 text-xs tracking-widest uppercase">Loading...</div>
+    </div>
+  )
+
+  if (session) return children
 
   return (
     <div className="min-h-screen bg-brand-black flex items-center justify-center px-4">
@@ -28,24 +47,36 @@ export default function AdminGuard({ children }) {
           <div className="font-sans font-semibold text-sm tracking-widest uppercase text-white mb-1">OTEI</div>
           <div className="text-[9px] tracking-widest uppercase text-brand-orange font-medium mb-6">Admin Dashboard</div>
           <h1 className="font-serif text-2xl font-bold text-white">Restricted Access</h1>
-          <p className="text-gray-500 text-xs mt-2">Enter the admin password to continue.</p>
+          <p className="text-gray-500 text-xs mt-2">Sign in with your admin account to continue.</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
+            <label className="label text-gray-400">Email Address</label>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={e => { setEmail(e.target.value); setError('') }}
+              className="input-field bg-gray-900 border-gray-700 text-white placeholder-gray-600 focus:border-brand-orange"
+              placeholder="admin@ogbomosotei.com"
+              autoFocus
+            />
+          </div>
+          <div>
             <label className="label text-gray-400">Password</label>
             <input
               type="password"
+              required
               value={password}
               onChange={e => { setPassword(e.target.value); setError('') }}
               className="input-field bg-gray-900 border-gray-700 text-white placeholder-gray-600 focus:border-brand-orange"
-              placeholder="Enter admin password"
-              autoFocus
+              placeholder="Enter your password"
             />
             {error && <p className="text-red-400 text-xs mt-2">{error}</p>}
           </div>
-          <button type="submit" className="btn-primary w-full text-center">
-            Access Dashboard
+          <button type="submit" disabled={loading} className="btn-primary w-full text-center disabled:opacity-50">
+            {loading ? 'Signing in...' : 'Access Dashboard'}
           </button>
         </form>
 
