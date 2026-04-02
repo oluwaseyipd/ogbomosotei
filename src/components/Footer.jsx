@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaXTwitter, FaInstagram, FaFacebook, FaWhatsapp, FaCalendar, FaClock, FaLocationPin, FaMessage } from 'react-icons/fa6'
+import { FaXTwitter, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa6'
 import logo from '../assets/footer-logo.png'
 import { useCountdown } from '../hooks/useCountdown'
 
@@ -81,16 +81,13 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] tracking-widest uppercase text-brand-orange font-semibold mb-4">Event Info</h4>
             <div className="flex items-center gap-1 mb-2">
-              {/* <FaCalendar size={12} className="inline-block text-white mr-1" /> */}
               <span className="text-sm font-bold text-white">May 2, 2026</span>
             </div>
 
             <div className="flex items-center gap-1 mb-2">
-              {/* <FaClock size={12} className="inline-block text-white mr-1" /> */}
               <span className="text-sm text-gray-400">10:00 AM</span>
             </div>
             <div className="flex items-center gap-1 mb-2">
-              {/* <FaLocationPin size={12} className="inline-block text-white mr-1" /> */}
               <span className="text-sm text-gray-400">The Hall, LAUTECH, Ogbomoso</span>
             </div>
 

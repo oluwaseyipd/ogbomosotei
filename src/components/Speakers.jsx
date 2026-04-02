@@ -65,7 +65,7 @@ const speakersData = [
   },
 ];
 
-export function SpeakerSection() {
+export function SpeakerSection({ identity }) {
   const scrollRef = useRef(null);
 
 
@@ -93,7 +93,7 @@ export function SpeakerSection() {
 }, []);
 
   return (
-    <section id="speaker" className="bg-brand-black py-24 overflow-hidden">
+    <section id={identity} className="bg-brand-black py-24 overflow-hidden">
       
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         
@@ -105,9 +105,9 @@ export function SpeakerSection() {
 
         {/* Scroll Container */}
         <div
-  ref={scrollRef}
-  className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
->
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+        >
           
           {speakersData.map((speaker, index) => (
             <div

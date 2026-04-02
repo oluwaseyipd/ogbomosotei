@@ -291,7 +291,7 @@ export default function Home() {
       <ScheduleSection />
 
       {/* SPEAKERS */}
-      <SpeakerSection />
+      <SpeakerSection identity="speakers" />
 
       {/* SPONSORS */}
       <SponsorsSection />
