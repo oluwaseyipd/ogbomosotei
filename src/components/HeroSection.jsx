@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useCountdown } from '../hooks/useCountdown'
-import { FaWhatsapp } from 'react-icons/fa6'
 import herobg from '../assets/hero.png'
 
 

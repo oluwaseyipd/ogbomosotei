@@ -219,68 +219,12 @@ export default function Home() {
   const { days, hours, minutes, seconds } = useCountdown()
 
   return (
-    <>
-      {/* HERO */}
-      {/* <section className="grid grid-cols-1 md:grid-cols-2 min-h-[90vh] border-b border-gray-100"> */}
-        {/* Left */}
-        {/* <div className="flex flex-col justify-center px-8 md:px-14 py-16 md:py-24 border-b md:border-b-0 md:border-r border-gray-100">
-          <div className="flex items-center gap-2 mb-7">
-            <div className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-            <span className="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Inaugural Edition — Ogbomoso, Nigeria</span>
-          </div>
-
-          <h1 className="font-serif text-5xl md:text-6xl font-black text-brand-black leading-[1.05] mb-4">
-            Ignite Your<br />
-            <span className="text-brand-orange">Vision.</span><br />
-            Build Your Value.
-          </h1>
-
-          <p className="text-xs text-gray-500 border-l-4 border-brand-orange pl-3 mb-8 max-w-sm leading-relaxed">
-            "Vision to Value: Building a Structured, Bankable and Scalable Enterprise"
-          </p>
-
-          <div className="flex gap-8 mb-10">
-            {[
-              { label: 'Date', value: 'May 2, 2026' },
-              { label: 'Time', value: '10:00 AM' },
-              { label: 'Venue', value: 'LAUTECH, Ogbomoso' },
-            ].map(m => (
-              <div key={m.label}>
-                <div className="text-[9px] tracking-widest uppercase text-gray-400 font-medium mb-1">{m.label}</div>
-                <div className="text-sm font-semibold text-brand-black">{m.value}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <Link to="/register" className="btn-primary">Register for Free</Link>
-            <Link to="/sponsor" className="btn-outline">Become a Sponsor</Link>
-          </div>
-        </div> */}
-
-        {/* Right — Countdown */}
-        {/* <div className="bg-brand-black flex flex-col items-center justify-center px-8 py-16 md:py-24">
-          <div className="text-[10px] tracking-widest uppercase text-brand-orange font-medium mb-10">Event Countdown</div>
-
-          <div className="flex gap-0.5 w-full max-w-sm">
-            <CountdownBlock value={days} label="Days" />
-            <CountdownBlock value={hours} label="Hours" />
-            <CountdownBlock value={minutes} label="Mins" />
-            <CountdownBlock value={seconds} label="Secs" />
-          </div>
-
-          <div className="mt-10 border border-gray-800 px-8 py-5 text-center w-full max-w-sm">
-            <div className="text-white text-sm font-semibold">Saturday, May 2, 2026</div>
-            <div className="text-gray-500 text-xs mt-1">The Hall, LAUTECH Ogbomoso · 10:00 AM</div>
-          </div>
-
-          <a href="https://chat.whatsapp.com/IV3NhSWZ1zTA3kXw5Q5JEy" target="_blank" rel="noopener noreferrer"
-            className="mt-6 flex items-center gap-2 text-xs text-gray-500 hover:text-green-400 transition-colors duration-200">
-            <FaWhatsapp size={14} className="text-green-500" />
-            Join our WhatsApp Community
-          </a>
-        </div> */}
-      {/* </section> */}
+    <div className='relative'>
+      {/* Floating WhatsApp Button */}
+      <a href="https://chat.whatsapp.com/IV3NhSWZ1zTA3kXw5Q5JEy" target="_blank" rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-200 z-50">
+        <FaWhatsapp size={24} />
+      </a>
 
       {/* TICKER */}
       <HeroSection />
@@ -367,6 +311,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }
