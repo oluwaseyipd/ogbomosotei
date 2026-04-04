@@ -9,7 +9,6 @@ import VolunteersTab from '../components/dashboard/VolunteersTab'
 import SponsorsTab from '../components/dashboard/SponsorsTab'
 import ExhibitorsTab from '../components/dashboard/ExhibitorsTab'
 
-
 const TABLES = ['registrations', 'volunteers', 'sponsors', 'exhibitors']
 
 // Helper internal to the dashboard shell
@@ -48,7 +47,7 @@ export default function Admin() {
 
   useEffect(() => { fetchAll() }, [fetchAll])
 
-  const handleLogout = async () => {
+   const handleLogout = async () => {
   await supabase.auth.signOut()
 }
 

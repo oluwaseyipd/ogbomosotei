@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { sendSponsorEmail } from '../lib/email'
 import toast from 'react-hot-toast'
 
 const ORG_TYPES = ['Corporate', 'Financial Institution', 'Government Agency', 'NGO / Development Partner', 'Other']
@@ -48,6 +49,7 @@ export default function Sponsor() {
     const { error } = await supabase.from('sponsors').insert([form])
     setLoading(false)
     if (error) { toast.error('Submission failed. Please try again.'); return }
+    await sendSponsorEmail(form)
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
