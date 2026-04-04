@@ -5,16 +5,13 @@ import { HiArrowRight } from 'react-icons/hi'
 import { SpeakerSection } from '../components/Speakers'
 import HeroSection from '../components/HeroSection'
 
-// ─── Countdown Block ───────────────────────────────────────────────
-function CountdownBlock({ value, label }) {
-  const display = String(value).padStart(2, '0')
-  return (
-    <div className="bg-gray-900 px-4 py-6 text-center flex-1">
-      <div className="font-serif text-5xl md:text-6xl font-bold text-white leading-none">{display}</div>
-      <div className="text-[9px] tracking-widest uppercase text-gray-500 mt-2 font-medium">{label}</div>
-    </div>
-  )
-}
+// Sponsor logos
+import sponsor1 from '../assets/sponsors/fxlogistics.png'
+import sponsor2 from '../assets/sponsors/vehauction.png'
+import sponsor3 from '../assets/sponsors/frillconstructions.png'
+import sponsor4 from '../assets/sponsors/naijaridesauto.png'
+
+
 
 // ─── Ticker ────────────────────────────────────────────────────────
 const PILLARS = [
@@ -44,62 +41,16 @@ function Ticker() {
   )
 }
 
-// ─── Speakers Slider ───────────────────────────────────────────────
-const SPEAKERS = [
-  { initials: 'TBA', name: 'Speaker Name', role: 'Industry Expert', topic: 'Technology & Innovation', tag: 'Keynote' },
-  { initials: 'TBA', name: 'Speaker Name', role: 'Legal Practitioner', topic: 'Business Compliance', tag: 'Panelist' },
-  { initials: 'TBA', name: 'Speaker Name', role: 'FIRS Representative', topic: 'Tax Education', tag: 'Workshop Lead' },
-  { initials: 'TBA', name: 'Speaker Name', role: 'Investor & VC', topic: 'Startup Funding', tag: 'Pitch Judge' },
-  { initials: 'TBA', name: 'Speaker Name', role: 'Entrepreneur', topic: 'SME Growth', tag: 'Panelist' },
-  { initials: 'TBA', name: 'Speaker Name', role: 'Tech Leader', topic: 'Digital Skills', tag: 'Speaker' },
-]
-
-// function SpeakersSection() {
-//   return (
-//     <section id="speakers" className="py-20 px-5 md:px-10 max-w-7xl mx-auto">
-//       <div className="mb-12">
-//         <span className="section-tag">Our Speakers</span>
-//         <h2 className="section-title">Meet the Lineup</h2>
-//       </div>
-
-//       <div className="flex gap-0.5 overflow-x-auto pb-4 scrollbar-hide snap-x">
-//         {SPEAKERS.map((s, i) => (
-//           <div key={i} className="bg-gray-50 border border-gray-100 p-6 min-w-[200px] max-w-[200px] flex-shrink-0 snap-start">
-//             <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-brand-orange font-bold text-lg mb-4">
-//               {s.initials}
-//             </div>
-//             <div className="text-sm font-semibold text-brand-black mb-1">{s.name}</div>
-//             <div className="text-[11px] text-gray-500 leading-relaxed">{s.role}</div>
-//             <div className="text-[11px] text-gray-400">{s.topic}</div>
-//             <span className="inline-block mt-3 text-[9px] tracking-widest uppercase px-2 py-1 bg-orange-50 text-brand-orange font-semibold">
-//               {s.tag}
-//             </span>
-//           </div>
-//         ))}
-     
-//         <div className="bg-brand-black p-6 min-w-[200px] flex-shrink-0 snap-start flex flex-col justify-center">
-//           <div className="text-[9px] tracking-widest uppercase text-brand-orange font-semibold mb-3">Coming Soon</div>
-//           <p className="text-gray-500 text-xs leading-relaxed">
-//             Speakers are being confirmed. Follow us on social media for announcements.
-//           </p>
-//         </div>
-//       </div>
-
-//       <p className="text-xs text-gray-400 mt-4">Scroll to see all speakers →</p>
-//     </section>
-//   )
-// }
 
 // ─── Sponsors Scroll ───────────────────────────────────────────────
-const TIERS = [
-  { name: 'Platinum', price: '₦3,000,000', desc: 'Maximum visibility & brand impact', featured: true },
-  { name: 'Gold', price: '₦2,000,000', desc: 'Premium presence & speaking opportunity' },
-  { name: 'Silver', price: '₦500,000', desc: 'Community-level partnership' },
-  { name: 'Custom', price: 'Custom', desc: 'Tailored partnership — let\'s talk' },
-]
+
+// sponsor logos
+
+const SPONSORS = [sponsor1, sponsor2, sponsor3, sponsor4]
 
 function SponsorsSection() {
-  const slots = Array(14).fill(null)
+  // Repeat sponsors multiple times for continuous scrolling
+  const scrollingSponsors = [...SPONSORS, ...SPONSORS, ...SPONSORS, ...SPONSORS, ...SPONSORS]
   return (
     <section id="sponsors" className="border-t border-b border-gray-100 py-16 overflow-hidden">
       <div className="text-center px-5 mb-10">
@@ -109,15 +60,20 @@ function SponsorsSection() {
       </div>
 
       {/* Infinite scroll logos */}
-      <div className="overflow-hidden mb-12">
-        <div className="flex sponsor-animate gap-0.5">
-          {[...slots, ...slots].map((_, i) => (
-            <div key={i} className="min-w-[160px] h-16 border border-gray-100 flex items-center justify-center flex-shrink-0">
-              <span className="text-[10px] tracking-widest uppercase text-gray-300 font-medium">Your Logo</span>
-            </div>
-          ))}
-        </div>
+<div className="overflow-hidden mb-16">
+  <div className="flex sponsor-animate gap-20 w-max">
+    {scrollingSponsors.map((sponsor, i) => (
+      <div key={i} className="min-w-[200px] h-28 flex items-center justify-center flex-shrink-0 bg-white">
+        <img 
+          src={sponsor} 
+          alt={`Sponsor ${i + 1}`} 
+          className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all"
+        />
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* CTA - Become A Sponsor */}
       <div className='max-w-5xl mx-auto px-5 md:px-10'>
@@ -216,7 +172,6 @@ function ScheduleSection() {
 
 // ─── Main Home Component ───────────────────────────────────────────
 export default function Home() {
-  const { days, hours, minutes, seconds } = useCountdown()
 
   return (
     <div className='relative'>
