@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { sendRegistrationEmail } from '../lib/email'
 import toast from 'react-hot-toast'
 import { FaWhatsapp } from 'react-icons/fa6'
 
@@ -66,6 +67,9 @@ export default function Register() {
     const { error } = await supabase.from('registrations').insert([form])
     setLoading(false)
     if (error) { toast.error('Submission failed. Please try again.'); return }
+
+    await sendRegistrationEmail(form) 
+    
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { sendExhibitionEmail } from '../lib/email'
 import toast from 'react-hot-toast'
 
 const INDUSTRIES = ['Tech', 'Finance', 'Logistics', 'Education', 'Legal / Compliance', 'Beauty Industry', 'FMCG', 'Other']
@@ -33,6 +34,7 @@ export default function Exhibition() {
     const { error } = await supabase.from('exhibitors').insert([form])
     setLoading(false)
     if (error) { toast.error('Submission failed. Please try again.'); return }
+    await sendExhibitionEmail(form) 
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
