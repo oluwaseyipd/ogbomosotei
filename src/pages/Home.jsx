@@ -10,6 +10,7 @@ import sponsor1 from '../assets/sponsors/fxlogistics.png'
 import sponsor2 from '../assets/sponsors/vehauction.png'
 import sponsor3 from '../assets/sponsors/frillconstructions.png'
 import sponsor4 from '../assets/sponsors/naijaridesauto.png'
+import sponsor5 from '../assets/sponsors/creatorgigs.png'
 
 
 
@@ -46,11 +47,11 @@ function Ticker() {
 
 // sponsor logos
 
-const SPONSORS = [sponsor1, sponsor2, sponsor3, sponsor4]
+const SPONSORS = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5]
 
 function SponsorsSection() {
   // Repeat sponsors multiple times for continuous scrolling
-  const scrollingSponsors = [...SPONSORS, ...SPONSORS, ...SPONSORS, ...SPONSORS, ...SPONSORS]
+  const scrollingSponsors = [...SPONSORS, ...SPONSORS, ...SPONSORS]
   return (
     <section id="sponsors" className="border-t border-b border-gray-100 py-16 overflow-hidden">
       <div className="text-center px-5 mb-10">
