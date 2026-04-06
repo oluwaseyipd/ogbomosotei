@@ -3,12 +3,12 @@ import { supabase } from '../lib/supabase'
 import toast from 'react-hot-toast'
 
 const ORG_TYPES = ['Corporate', 'Financial Institution', 'Government Agency', 'NGO / Development Partner', 'Other']
-// const TIERS = [
-//   { value: 'Platinum Sponsor - ₦3,000,000', label: 'Platinum Sponsor', price: '₦3,000,000', desc: 'Maximum brand visibility, speaking slot, exhibition booth, VIP access' },
-//   { value: 'Gold Sponsor - ₦2,000,000', label: 'Gold Sponsor', price: '₦2,000,000', desc: 'Premium brand presence, speaking opportunity, branded materials' },
-//   { value: 'Silver Sponsor - ₦500,000', label: 'Silver Sponsor', price: '₦500,000', desc: 'Community-level partnership, logo placement, social media mention' },
-//   { value: 'Custom Partnership', label: 'Custom Partnership', price: 'Custom', desc: 'Tailored package — define your own terms and budget' },
-// ]
+const TIERS = [
+  { value: 'Platinum Sponsor - ₦3,000,000', label: 'Platinum Sponsor', price: '₦3,000,000', desc: 'Maximum brand visibility, speaking slot, exhibition booth, VIP access' },
+  { value: 'Gold Sponsor - ₦2,000,000', label: 'Gold Sponsor', price: '₦2,000,000', desc: 'Premium brand presence, speaking opportunity, branded materials' },
+  { value: 'Silver Sponsor - ₦500,000', label: 'Silver Sponsor', price: '₦500,000', desc: 'Community-level partnership, logo placement, social media mention' },
+  { value: 'Custom Partnership', label: 'Custom Partnership', price: 'Custom', desc: 'Tailored package — define your own terms and budget' },
+]
 const INTEREST_AREAS = ['Brand Visibility', 'Speaking Opportunity', 'Exhibition Booth', 'CSR / Community Impact', 'Tax & Compliance Education']
 const HOW_HEARD = ['Social Media', 'Industry Network', 'Referral', 'Email / Newsletter', 'Other']
 
@@ -42,7 +42,7 @@ export default function Sponsor() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // if (!form.sponsorship_tier) return toast.error('Please select a sponsorship tier.')
+    if (!form.sponsorship_tier) return toast.error('Please select a sponsorship tier.')
     if (!form.info_accurate) return toast.error('Please confirm the information is accurate.')
     setLoading(true)
     const { error } = await supabase.from('sponsors').insert([form])
@@ -76,7 +76,7 @@ export default function Sponsor() {
       </div>
 
       {/* Tier Cards */}
-      {/* <div className="bg-gray-50 border-b border-gray-100 py-12 px-5">
+      <div className="bg-gray-50 border-b border-gray-100 py-12 px-5">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl font-bold text-brand-black text-center mb-8">Sponsorship Tiers</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
@@ -104,7 +104,7 @@ export default function Sponsor() {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Form */}
       <div className="max-w-2xl mx-auto px-5 py-16">
@@ -155,7 +155,7 @@ export default function Sponsor() {
           {/* C. Sponsorship Details */}
           <div>
             <div className="form-section-title">C. Sponsorship Details</div>
-            {/* <div className="mb-1">
+            <div className="mb-1">
               <label className="label">Selected Tier</label>
               <div className={`input-field text-sm ${form.sponsorship_tier ? 'text-brand-black' : 'text-gray-400'}`}>
                 {form.sponsorship_tier || 'Select a tier from the cards above'}
@@ -164,7 +164,7 @@ export default function Sponsor() {
             {form.sponsorship_tier === 'Custom Partnership' && (
               <div className="mt-4"><label className="label">Estimated Sponsorship Budget (Optional)</label>
                 <input className="input-field" placeholder="e.g. ₦150,000" value={form.custom_budget} onChange={e => set('custom_budget', e.target.value)} /></div>
-            )} */}
+            )}
             <div className="mt-4">
               <label className="label mb-3">Area of Interest (Multiple choice)</label>
               <MultiCheck options={INTEREST_AREAS} selected={form.interest_areas} onChange={v => set('interest_areas', v)} />
