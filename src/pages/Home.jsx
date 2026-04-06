@@ -87,9 +87,10 @@ function SponsorsSection() {
             </p>
           </div>
           <div className="btn-primary flex items-center gap-2 py-3 px-6 cursor-pointer"> 
-            <Link to="/sponsor"  />
-            View Sponsorship Packages
-            <HiArrowRight size={16} />
+            <a href="/sponsor" className='flex items-center gap-4'> 
+            <span>View Sponsorship Packages</span> 
+             <HiArrowRight size={16} />
+             </a>
           </div>
           
 
