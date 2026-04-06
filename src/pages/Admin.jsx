@@ -25,7 +25,7 @@ function StatCard({ label, value, sub }) {
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState('registrations')
-  const [allData, setAllData] = useState({ registrations: [], volunteers: [], sponsors: [], exhibitors: [] })
+  const [allData, setAllData] = useState({ registrations: [], volunteers: [], sponsors: [], exhibitors: [], newsletter_subscribers: [] })
   const [loading, setLoading] = useState(true)
   const [lastRefresh, setLastRefresh] = useState(null)
 
