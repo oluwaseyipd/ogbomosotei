@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { sendVolunteerEmail } from '../lib/email'
 import toast from 'react-hot-toast'
 
 const AREAS = ['Registration & Guest Management', 'Media, Publicity & Content Creation', 'Technical Support', 'Logistics & Venue Setup', 'Speaker & VIP Support']
@@ -57,6 +58,7 @@ export default function Volunteer() {
     const { error } = await supabase.from('volunteers').insert([form])
     setLoading(false)
     if (error) { toast.error('Submission failed. Please try again.'); return }
+    await sendVolunteerEmail(form)
     setSubmitted(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
