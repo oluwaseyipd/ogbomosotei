@@ -8,6 +8,8 @@ import Speaker4 from '../assets/speakers/temitayo.jpeg'
 import Speaker5 from '../assets/speakers/akintayo.jpeg'
 import Speaker6 from '../assets/speakers/Oreoluwa.jpeg'
 import Speaker7 from '../assets/speakers/oyeinloye.jpeg'
+import Speaker8 from '../assets/speakers/oluwatobi.jpeg'
+import Speaker9 from '../assets/speakers/afolabi.jpeg'
 
 const speakersData = [
   {   
@@ -73,6 +75,27 @@ const speakersData = [
       linkedin: "https://www.linkedin.com/in/adedotunoyinloye/",
       facebook: "https://web.facebook.com/adedotun.oyinloye.9/",
       instagram: "https://www.instagram.com/adedotunglobal/",
+    }
+  },
+  {   
+    name: "Oluwatobi Ojua",
+    title: "Strategic Brand Consultant",
+    company:"Glittery World A2618 International",
+    image: Speaker8,
+    social:{
+      twitter: "https://x.com/oluwatobiojua",
+      facebook: "https://web.facebook.com/Oluwatobiojua/",
+      instagram: "https://www.instagram.com/oluwatobiojua_obagangan/",
+    }
+  },
+  {   
+    name: "Favour Afolabi",
+    title: "Software Developer",
+    company:"Edozzier",
+    image: Speaker9,
+    social:{
+      linkedin: "https://ng.linkedin.com/in/favour-afolabi",
+      twitter: "https://x.com/fav_afolabi",
     }
   },
 ];
