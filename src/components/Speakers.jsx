@@ -10,6 +10,7 @@ import Speaker6 from '../assets/speakers/Oreoluwa.jpeg'
 import Speaker7 from '../assets/speakers/oyeinloye.jpeg'
 import Speaker8 from '../assets/speakers/oluwatobi.jpeg'
 import Speaker9 from '../assets/speakers/afolabi.jpeg'
+import Speaker10 from '../assets/speakers/nrss.jpeg'
 
 const speakersData = [
   {   
@@ -96,6 +97,19 @@ const speakersData = [
     social:{
       linkedin: "https://ng.linkedin.com/in/favour-afolabi",
       twitter: "https://x.com/fav_afolabi",
+    }
+  },
+  
+  {   
+    name: "Nigeria Revenue Service Representative",
+    // title: "Software Developer",
+    // company:"Edozzier",
+    image: Speaker10,
+    social:{
+      linkedin: "https://ng.linkedin.com/company/nrsnigeria",
+      twitter: "https://x.com/NigeriaRevenue",
+      facebook: "https://www.facebook.com/OfficialNRSNigeria/",
+      instagram: "https://www.instagram.com/nigeriarevenue/",
     }
   },
 ];
