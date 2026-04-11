@@ -11,6 +11,7 @@ import sponsor2 from '../assets/sponsors/vehauction.png'
 import sponsor3 from '../assets/sponsors/frillconstructions.png'
 import sponsor4 from '../assets/sponsors/naijaridesauto.png'
 import sponsor5 from '../assets/sponsors/creatorgigs.png'
+import sponsor6 from '../assets/sponsors/nrs.png'
 
 
 
@@ -47,7 +48,7 @@ function Ticker() {
 
 // sponsor logos
 
-const SPONSORS = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5]
+const SPONSORS = [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor6]
 
 function SponsorsSection() {
   // Repeat sponsors multiple times for continuous scrolling
