@@ -46,13 +46,17 @@ export default function SponsorsTab({ data, loading }) {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex gap-3 mb-4">
+      <div className="flex flex-col md:flex-row gap-3 mb-4">
         <input className="input-field max-w-xs text-sm py-2" placeholder="Search organisation, name, email..." value={search} onChange={e => setSearch(e.target.value)} />
-        <button onClick={() => downloadCSV(filtered, 'otei_sponsors.csv')}
+        <div className='flex gap-3'>
+ <button onClick={() => downloadCSV(filtered, 'otei_sponsors.csv')}
           className="flex items-center gap-1.5 text-xs font-medium border border-gray-200 px-4 py-2 hover:border-brand-orange hover:text-brand-orange transition-colors">
           <HiOutlineDownload size={14} /> Export CSV
         </button>
         <span className="text-xs text-gray-400 self-center">{filtered.length} records</span>
+
+        </div>
+       
       </div>
 
       <div className="overflow-x-auto">

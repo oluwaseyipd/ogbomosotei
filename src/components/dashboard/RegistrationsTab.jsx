@@ -51,17 +51,23 @@ export default function RegistrationsTab({ data, loading }) {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-3 mb-4">
+      <div className="flex flex-col md:flex-row gap-3 mb-4">
         <input className="input-field max-w-xs text-sm py-2" placeholder="Search name, email, city..." value={search} onChange={e => setSearch(e.target.value)} />
-        <select className="select-field max-w-xs text-sm py-2" value={filterCategory} onChange={e => setFilterCategory(e.target.value)}>
+        
+          <select className="select-field max-w-xs text-sm py-2" value={filterCategory} onChange={e => setFilterCategory(e.target.value)}>
           <option value="">All Categories</option>
           {allCategories.map(c => <option key={c}>{c}</option>)}
         </select>
+        
+        <div className='flex gap-3'>
+
         <button onClick={() => downloadCSV(filtered, 'otei_registrations.csv')}
           className="flex items-center gap-1.5 text-xs font-medium border border-gray-200 px-4 py-2 hover:border-brand-orange hover:text-brand-orange transition-colors">
           <HiOutlineDownload size={14} /> Export CSV
         </button>
         <span className="text-xs text-gray-400 self-center">{filtered.length} of {data.length} records</span>
+        </div>
+        
       </div>
 
       <div className="overflow-x-auto">
