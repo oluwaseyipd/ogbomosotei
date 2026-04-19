@@ -11,6 +11,7 @@ import Speaker7 from '../assets/speakers/oyeinloye.jpeg'
 import Speaker8 from '../assets/speakers/oluwatobi.jpeg'
 import Speaker9 from '../assets/speakers/afolabi.jpeg'
 import Speaker10 from '../assets/speakers/nrss.jpeg'
+import Speaker11 from '../assets/speakers/opajobi.jpeg'
 
 const speakersData = [
   {   
@@ -52,12 +53,12 @@ const speakersData = [
     title: "Finance Strategist, Co-founder",
     company:"Vehauction",
     image: Speaker5,
-    social:{
-      linkedin: "#",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
-    }
+    // social:{
+    //   linkedin: "#",
+    //   twitter: "#",
+    //   facebook: "#",
+    //   instagram: "#",
+    // }
   },
   {   
     name: "Yale Shola Oreoluwa",
@@ -65,6 +66,18 @@ const speakersData = [
     image: Speaker6,
     social:{
       facebook: "https://web.facebook.com/Oluwashola.Oreolwa/",
+    }
+  },
+  ,
+  {   
+    name: "Rev'd Taiwo Opajobi",
+    title: "Lead Pastor",
+    company:"Univesity Baptist Church, Ogbomoso",
+    image: Speaker11,
+    social:{
+      linkedin:"https://ng.linkedin.com/in/taiwo-opajobi-8a43b526",
+      facebook: "https://web.facebook.com/Taiwo.Opajobi/",
+      instagram: "https://www.instagram.com/taiwo_opajobi_/",
     }
   },
    {   
