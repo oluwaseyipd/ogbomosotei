@@ -13,6 +13,10 @@ import sponsor4 from '../assets/sponsors/naijaridesauto.png'
 import sponsor5 from '../assets/sponsors/creatorgigs.png'
 
 
+// About Image
+import conv from '../assets/speakers/godwin.png'
+
+
 
 // ─── Ticker ────────────────────────────────────────────────────────
 const PILLARS = [
@@ -176,10 +180,14 @@ function ScheduleSection() {
 export default function Home() {
 
   return (
-    <div className='relative'>
+    <div className="relative">
       {/* Floating WhatsApp Button */}
-      <a href="https://chat.whatsapp.com/IV3NhSWZ1zTA3kXw5Q5JEy" target="_blank" rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-200 z-50">
+      <a
+        href="https://chat.whatsapp.com/IV3NhSWZ1zTA3kXw5Q5JEy"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-200 z-50"
+      >
         <FaWhatsapp size={24} />
       </a>
 
@@ -193,51 +201,113 @@ export default function Home() {
           {/* Left */}
           <div>
             <span className="section-tag">About OTEI</span>
-            <h2 className="section-title mb-6">Where Ideas Meet Structure &amp; Opportunity</h2>
+            <h2 className="section-title mb-6">
+              Where Ideas Meet Structure &amp; Opportunity
+            </h2>
             <p className="text-sm text-gray-500 leading-relaxed mb-4">
-              Ogbomoso Tech &amp; Entrepreneurship Ignite is a flagship innovation and business empowerment event created to spark a new wave of technology adoption, entrepreneurial thinking, tax awareness, and regulatory compliance among students, youths, founders, professionals, and small businesses in Ogbomoso.
+              Ogbomoso Tech &amp; Entrepreneurship Ignite is a flagship
+              innovation and business empowerment event created to spark a new
+              wave of technology adoption, entrepreneurial thinking, tax
+              awareness, and regulatory compliance among students, youths,
+              founders, professionals, and small businesses in Ogbomoso.
             </p>
             <p className="text-sm text-gray-500 leading-relaxed mb-8">
-              Designed as a high-impact, practical gathering that goes beyond motivation — focusing on real-world skills, responsible business practices, and sustainable growth.
+              Designed as a high-impact, practical gathering that goes beyond
+              motivation — focusing on real-world skills, responsible business
+              practices, and sustainable growth.
             </p>
+
+            <div className="flex flex-col gap-0.5">
 
             <div className="grid grid-cols-2 gap-0.5">
               {[
-                { num: '01', label: 'Technology', desc: 'Digital education & skill development' },
-                { num: '02', label: 'Startups', desc: 'Launchpad for entrepreneurs & SMEs' },
-                { num: '03', label: 'Tax & Compliance', desc: 'FIRS, VAT, CAC education' },
-                { num: '04', label: 'Growth', desc: 'Local talent, global opportunities' },
-              ].map(p => (
-                <div key={p.num} className="bg-gray-50 border border-gray-100 p-5">
-                  <div className="text-[10px] font-bold text-brand-orange tracking-widest mb-2">{p.num} — {p.label.toUpperCase()}</div>
-                  <p className="text-xs text-gray-500 leading-relaxed">{p.desc}</p>
+                {
+                  num: "01",
+                  label: "Technology",
+                  desc: "Digital education & skill development",
+                },
+                {
+                  num: "02",
+                  label: "Startups",
+                  desc: "Launchpad for entrepreneurs & SMEs",
+                },
+                {
+                  num: "03",
+                  label: "Tax & Compliance",
+                  desc: "FIRS, VAT, CAC education",
+                },
+                {
+                  num: "04",
+                  label: "Growth",
+                  desc: "Local talent, global opportunities",
+                },
+              ].map((p) => (
+                <div
+                  key={p.num}
+                  className="bg-gray-50 border border-gray-100 p-5"
+                >
+                  <div className="text-[10px] font-bold text-brand-orange tracking-widest mb-2">
+                    {p.num} — {p.label.toUpperCase()}
+                  </div>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    {p.desc}
+                  </p>
                 </div>
               ))}
             </div>
+
+            <div className='grid grid-cols-2 gap-0.5'>
+
+            
+            {[
+              {
+                num: "1K+",
+                desc: "Expected attendees — students, founders, professionals, and SME operators",
+              },
+              {
+                num: "6+",
+                desc: "Key session pillars covering technology, business, tax, compliance, and more",
+              },
+            ].map((s) => (
+              <div
+                key={s.num}
+                className="flex items-center gap-6 p-6 bg-brand-black border border-gray-100"
+              >
+                <div className="font-serif text-4xl font-bold text-white min-w-[80px]">
+                  {s.num.includes("+") ? (
+                    <>
+                      {s.num.replace("+", "")}
+                      <span className="text-brand-orange">+</span>
+                    </>
+                  ) : (
+                    s.num
+                  )}
+                </div>
+                <p className="text-xs text-gray-100 leading-relaxed">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+            </div>
+          </div>
           </div>
 
           {/* Right */}
           <div className="flex flex-col gap-0.5">
-            {[
-              { num: '1K+', desc: 'Expected attendees — students, founders, professionals, and SME operators' },
-              { num: '6+', desc: 'Key session pillars covering technology, business, tax, compliance, and more' },
-              { num: '1 Day', desc: 'High-impact, focused experience — May 2, 2026 at The Hall, LAUTECH' },
-            ].map(s => (
-              <div key={s.num} className="flex items-center gap-6 p-6 bg-gray-50 border border-gray-100">
-                <div className="font-serif text-4xl font-bold text-brand-black min-w-[80px]">
-                  {s.num.includes('+') ? <>{s.num.replace('+', '')}<span className="text-brand-orange">+</span></> : s.num}
-                </div>
-                <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
 
-            {/* Founder */}
-            <div className="bg-brand-black p-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-brand-orange flex items-center justify-center font-bold text-white text-base flex-shrink-0">AG</div>
-              <div>
-                <div className="text-sm font-semibold text-white">Adedoye Godwin A.</div>
-                <div className="text-xs text-gray-500 mt-0.5">Founder, OTEI</div>
-                <div className="text-[10px] text-brand-orange tracking-widest uppercase mt-1 font-medium">PMP · MBA · Business Leader</div>
+            <div className="bg-black border border-black p-4 inline-block">
+              <div className="border border-black overflow-hidden">
+                <img
+                  src={conv}
+                  alt="Adedoye Godwin A."
+                  className="w-full h-auto block"
+                />
+              </div>
+
+              <div className="text-black pt-4">
+                <h1 className="text-xl font-semibold text-white">Adedoye Godwin A.</h1>
+                <p className="text-xs text-gray-300 mt-0.5">Founder, OTEI</p>
+                <p className="text-[10px] text-brand-orange tracking-widest uppercase mt-1 font-medium">PMP · MBA · Business Leader</p>
               </div>
             </div>
           </div>
@@ -255,19 +325,28 @@ export default function Home() {
 
       {/* BOTTOM CTA */}
       <section className="bg-brand-orange py-16 px-5 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">Ready to be part of this?</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
+          Ready to be part of this?
+        </h2>
         <p className="text-orange-100 text-sm mb-8 max-w-md mx-auto">
-          Join hundreds of students, founders, and professionals at Ogbomoso's most impactful tech and entrepreneurship event.
+          Join hundreds of students, founders, and professionals at Ogbomoso's
+          most impactful tech and entrepreneurship event.
         </p>
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link to="/register" className="bg-white text-brand-orange px-8 py-3 text-sm font-semibold hover:bg-orange-50 transition-colors">
+          <Link
+            to="/register"
+            className="bg-white text-brand-orange px-8 py-3 text-sm font-semibold hover:bg-orange-50 transition-colors"
+          >
             Register for Free
           </Link>
-          <Link to="/volunteer" className="border border-white text-white px-8 py-3 text-sm font-medium hover:bg-orange-600 transition-colors">
+          <Link
+            to="/volunteer"
+            className="border border-white text-white px-8 py-3 text-sm font-medium hover:bg-orange-600 transition-colors"
+          >
             Volunteer
           </Link>
         </div>
       </section>
     </div>
-  )
+  );
 }
