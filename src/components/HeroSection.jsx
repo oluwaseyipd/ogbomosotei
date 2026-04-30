@@ -25,8 +25,8 @@ function CountdownBlock({ value, label }) {
             <div className='max-w-7xl mx-auto relative z-10'>
              <div className="flex flex-col justify-center px-8 md:px-14 py-16 md:py-24 md:max-w-4xl">
                <div className="flex items-center gap-2 mb-7">
-                 <div className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
-                 <span className="text-[10px] tracking-widest uppercase text-white font-medium">Inaugural Edition — Ogbomoso, Nigeria</span>
+                 {/* <div className="w-1.5 h-1.5 rounded-full bg-brand-orange" /> */}
+                 <span className="text-[18px] tracking-widest uppercase text-white font-bold">Ogbomoso Tech and Entrepreneurship Ignite</span>
                </div>
      
                <h1 className="font-serif text-5xl md:text-6xl font-black text-white leading-[1.05] mb-6">
