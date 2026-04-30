@@ -12,8 +12,19 @@ import Speaker8 from '../assets/speakers/oluwatobi.jpeg'
 import Speaker9 from '../assets/speakers/afolabi.jpeg'
 import Speaker10 from '../assets/speakers/nrss.jpeg'
 import Speaker11 from '../assets/speakers/opajobi.jpeg'
+import Speaker12 from '../assets/speakers/ahmed.jpeg'
+import Speaker13 from '../assets/speakers/ayobola.jpeg'
 
 const speakersData = [
+  {   
+    name: "Ahmad Saka",
+    title: "Software Engineer(Mobile & Security)",
+    company:"Andela",
+    image: Speaker12,
+    social:{
+      linkedin: "https://ng.linkedin.com/in/ahmad-saka",
+    }
+  },
   {   
     name: "Faith Dolapo",
     title: "Product Manager",
@@ -110,6 +121,14 @@ const speakersData = [
     social:{
       linkedin: "https://ng.linkedin.com/in/favour-afolabi",
       twitter: "https://x.com/fav_afolabi",
+    }
+  },
+  {   
+    name: "Dr. Ayobola Afolabi",
+    title: "Legal Practitioner & Consultant",
+    image: Speaker13,
+    social:{
+      facebook: "https://web.facebook.com/ayoboladaniella.afolabi.3/",
     }
   },
   
