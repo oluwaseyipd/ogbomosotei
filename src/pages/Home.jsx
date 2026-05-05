@@ -1,9 +1,10 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCountdown } from '../hooks/useCountdown'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { HiArrowRight } from 'react-icons/hi'
 import { SpeakerSection } from '../components/Speakers'
 import HeroSection from '../components/HeroSection'
+import NotificationModal from '../components/NotificationModal'
 
 // Sponsor logos
 import sponsor1 from '../assets/sponsors/fxlogistics.png'
@@ -178,9 +179,31 @@ function ScheduleSection() {
 
 // ─── Main Home Component ───────────────────────────────────────────
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false)
+  const timerRef = useRef(null)
+
+  useEffect(() => {
+    const startTimer = () => {
+      timerRef.current = window.setTimeout(() => {
+        setModalOpen(true)
+      }, 5000)
+    }
+
+    if (document.readyState === 'complete') {
+      startTimer()
+    } else {
+      window.addEventListener('load', startTimer)
+    }
+
+    return () => {
+      window.clearTimeout(timerRef.current)
+      window.removeEventListener('load', startTimer)
+    }
+  }, [])
 
   return (
     <div className="relative">
+      {modalOpen && <NotificationModal onClose={() => setModalOpen(false)} />}
       {/* Floating WhatsApp Button */}
       <a
         href="https://chat.whatsapp.com/IV3NhSWZ1zTA3kXw5Q5JEy"

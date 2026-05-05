@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Sponsor', href: '/sponsor', hash: null },
   { label: 'Exhibition', href: '/exhibition', hash: null },
   { label: 'Volunteer', href: '/volunteer', hash: null },
+  { label: 'Event Resources', href: '/event-resources', hash: null },
 ]
 
 export default function Navbar() {

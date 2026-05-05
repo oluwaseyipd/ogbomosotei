@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Volunteer from './pages/Volunteer'
 import Sponsor from './pages/Sponsor'
 import Exhibition from './pages/Exhibition'
+import EventResources from './pages/EventResources'
 import Admin from './pages/Admin'
 import AdminGuard from './components/AdminGuard'
 
@@ -36,6 +37,7 @@ export default function App() {
                 <Route path="/volunteer" element={<Volunteer />} />
                 <Route path="/sponsor" element={<Sponsor />} />
                 <Route path="/exhibition" element={<Exhibition />} />
+                <Route path="/event-resources" element={<EventResources />} />
               </Routes>
             </main>
             <Footer />
