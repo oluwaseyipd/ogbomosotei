@@ -186,7 +186,7 @@ export default function Home() {
     const startTimer = () => {
       timerRef.current = window.setTimeout(() => {
         setModalOpen(true)
-      }, 5000)
+      }, 1000)
     }
 
     if (document.readyState === 'complete') {
