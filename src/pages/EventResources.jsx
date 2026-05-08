@@ -36,13 +36,13 @@ const RESOURCES = [
     downloadUrl: 'https://docs.google.com/presentation/d/1LJ7iF2p9imTobWUcjP_csUY376mXPswoExnUaDEmMuw/edit?slide=id.p#slide=id.p',
     tag: 'Marketing'
   },
-//   {
-//     title: 'Tax Compliance for Entrepreneurs',
-//     speaker: 'Favour Afolabi',
-//     description: 'Understanding tax obligations and compliance requirements for entrepreneurs.',
-//     downloadUrl: '#',
-//     tag: 'Finance'
-//   },
+  {
+    title: 'Tax Compliance for Entrepreneurs',
+    speaker: 'Ahmed Shero Ismaila',
+    description: 'Understanding tax obligations and compliance requirements for entrepreneurs.',
+    downloadUrl: 'https://docs.google.com/presentation/d/1SXkaBZdkXRwNQpsLRCPrsMTtFU1Kqej9/edit?usp=sharing&ouid=115879581253208959480&rtpof=true&sd=true',
+    tag: 'Finance'
+  },
 ]
 
 export default function EventResources() {
